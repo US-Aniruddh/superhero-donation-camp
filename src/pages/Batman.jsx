@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Rain from '../components/Rain';
 import QRCodeModal from '../components/QRCodeModal';
+import batmanBg from '../assets/Batman_bg.png';
 
 const Batman = () => {
   const [name, setName] = useState('');
@@ -22,8 +23,25 @@ const Batman = () => {
   };
 
   return (
-    <div style={{ padding: '4rem 5%', position: 'relative', zIndex: 10 }}>
-      <Rain />
+    <div style={{ padding: '4rem 5%', position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
+      {/* Cinematic Background with Gaussian Blur */}
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundImage: `url(${batmanBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        filter: 'blur(8px) brightness(0.4)',
+        zIndex: 0,
+        pointerEvents: 'none'
+      }} />
+      
+      <div style={{ position: 'relative', zIndex: 10 }}>
+        <Rain />
+      </div>
       
       <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 11 }}>
         <header style={{ marginBottom: '4rem' }}>
