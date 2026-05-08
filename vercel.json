@@ -10,7 +10,5 @@
       "destination": "/index.html"
     }
   ],
-  "env": {
-    "MONGODB_URI": "@mongodb_uri"
-  }
+  "env": {}
 }
