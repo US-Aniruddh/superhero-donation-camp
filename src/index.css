@@ -220,16 +220,99 @@ input:focus {
 
 /* Navbar Simplified */
 .navbar {
-  padding: 2rem 5%;
+  padding: 1.5rem 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1000;
 }
 
 .nav-logo {
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-decoration: none;
   color: inherit;
-  font-size: 1.2rem;
+  font-size: 1rem;
+}
+
+/* Page Layouts */
+.page-container {
+  padding: 2rem 5%;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+.hero-header {
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 8vw, 3rem);
+  font-weight: 300;
+  letter-spacing: clamp(4px, 2vw, 10px);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  opacity: 0.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.8;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  maxWidth: 900px;
+  margin: 0 auto;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .hero-header {
+    margin-bottom: 2rem;
+  }
+
+  .minimal-card {
+    padding: 2rem 1rem;
+    min-height: 320px !important;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 2rem 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    letter-spacing: 4px;
+  }
+  
+  .btn {
+    padding: 1rem;
+    font-size: 0.7rem;
+  }
+  
+  input {
+    padding: 0.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+  .minimal-card:hover {
+    transform: none;
+  }
 }
