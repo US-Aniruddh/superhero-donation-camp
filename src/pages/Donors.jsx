@@ -27,7 +27,7 @@ const Donors = () => {
   useEffect(() => {
     const themeClass = hero === 'spider-man' ? 'theme-spiderman' : 'theme-batman';
     document.body.className = themeClass;
-    
+
     fetchDonors();
     return () => { document.body.className = ''; };
   }, [hero]);
@@ -47,10 +47,10 @@ const Donors = () => {
           </p>
         </header>
 
-        <div style={{ 
-          background: 'rgba(255, 255, 255, 0.02)', 
-          padding: '2.5rem', 
-          borderRadius: '16px', 
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.02)',
+          padding: '2.5rem',
+          borderRadius: '16px',
           border: '1px solid rgba(255, 255, 255, 0.05)',
           backdropFilter: 'blur(10px)',
           minHeight: '300px',
@@ -59,10 +59,10 @@ const Donors = () => {
         }}>
           {loading ? (
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '1.5rem' }}>
-              <div className="pulse-spinner" style={{ 
-                width: '40px', 
-                height: '40px', 
-                background: heroColor, 
+              <div className="pulse-spinner" style={{
+                width: '40px',
+                height: '40px',
+                background: heroColor,
                 borderRadius: '50%',
                 opacity: 0.5,
                 animation: 'pulse 1.5s infinite ease-in-out'
@@ -79,9 +79,9 @@ const Donors = () => {
           ) : donors.length > 0 ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               {donors.map((donor, index) => (
-                <div key={donor._id || index} style={{ 
-                  display: 'flex', 
-                  justifyContent: 'space-between', 
+                <div key={donor._id || index} style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
                   padding: '1.2rem 0',
                   borderBottom: '1px solid rgba(255, 255, 255, 0.03)',
                   animation: `fadeInUp 0.5s ease forwards ${index * 0.1}s`,
@@ -105,7 +105,7 @@ const Donors = () => {
 
         <div style={{ marginTop: '3rem', textAlign: 'center' }}>
           <button onClick={() => navigate('/')} className="btn btn-secondary" style={{ fontSize: '0.8rem', opacity: 0.6 }}>
-            BACK TO DASHBOARD
+            BACK TO DASHBOARD!
           </button>
         </div>
       </div>
