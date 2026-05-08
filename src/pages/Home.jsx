@@ -5,6 +5,7 @@ import spideyLogo from '../assets/Spiderman.png';
 import batmanLogo from '../assets/Batman.png';
 import Rain from '../components/Rain';
 
+
 const Home = () => {
   const { homeTheme } = useTheme();
   const navigate = useNavigate();
